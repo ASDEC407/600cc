@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>600cc Sport Bike Comparison (2000–2024)</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #1a2a3a, #2c3e50);
+      color: #e0e0e0;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    h1 {
+      text-align: center;
+      color: #f8f9fa;
+      margin: 20px 0;
+      font-size: 2.5em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    .description {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 30px;
+      font-size: 1.1em;
+      color: #bdc3c7;
+      line-height: 1.6;
+    }
+    .filters {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 15px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+    }
+    .filter-group {
+      display: inline-block;
+      margin: 0 15px;
+    }
+    label {
+      margin-right: 8px;
+      font-weight: 600;
+    }
+    select, input {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      font-size: 14px;
+      min-width: 140px;
+    }
+    select:focus, input:focus {
+      outline: 2px solid #3498db;
+      background: rgba(255,255,255,0.3);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    th, td {
+      padding: 14px 12px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      transition: background 0.3s ease;
+    }
+    th {
+      background: rgba(52, 152, 219, 0.8);
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
+    }
+    th:hover {
+      background: rgba(41, 128, 185, 0.9);
+    }
+    tr:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .manufacturer {
+      font-weight: bold;
+      color: #3498db;
+    }
+    .model-name {
+      font-weight: 600;
+      color: #ecf0f1;
+    }
+    .retired {
+      color: #95a5a6;
+      font-style: italic;
+    }
+    .current {
+      color: #2ecc71;
+      font-weight: 600;
+    }
+    .power-strong {
+      color: #e74c3c;
+      font-weight: 600;
+    }
+    .weight-light {
+      color: #2ecc71;
+      font-weight: 600;
+    }
+    .engine-inline {
+      color: #f39c12;
+    }
+    .engine-v {
+      color: #8e44ad;
+    }
+    .engine-radial {
+      color: #d35400;
+    }
+    .stats {
+      text-align: center;
+      margin: 30px auto;
+      max-width: 800px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .stat-box {
+      background: rgba(255,255,255,0.1);
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin: 10px;
+      min-width: 120px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-value {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #3498db;
+    }
+    .stat-label {
+      font-size: 0.9em;
+      color: #bdc3c7;
+    }
+    .search-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    #searchInput {
+      padding: 12px 20px;
+      width: 80%;
+      max-width: 500px;
+      border: none;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      font-size: 16px;
+      outline: none;
+      transition: all 0.3s;
+    }
+    #searchInput:focus {
+      background: rgba(255,255,255,0.3);
+      box-shadow: 0 0 20px rgba(52, 152, 219, 0.5);
+    }
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #95a5a6;
+      font-size: 0.9em;
+      padding: 20px;
+    }
+    .logo {
+      font-weight: bold;
+      color: #3498db;
+    }
+    @media (max-width: 768px) {
+      .filter-group {
+        display: block;
+        margin: 10px 0;
+      }
+      th, td {
+        padding: 10px 8px;
+        font-size: 0.9em;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      .stats {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>600cc Sport Bike Comparison (2000–2024)</h1>
+  <p class="description">
+    Comprehensive comparison of 600cc segment sport bikes from major manufacturers since 2000. 
+    Data includes displacement, power, weight, engine type, and production years. Click column headers to sort.
+    Use filters to narrow down your search.
+  </p>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search by model, manufacturer, or engine type..." />
+  </div>
+
+  <div class="filters">
+    <div class="filter-group">
+      <label for="manufacturerFilter">Manufacturer:</label>
+      <select id="manufacturerFilter">
+        <option value="">All Manufacturers</option>
+        <option value="Honda">Honda</option>
+        <option value="Yamaha">Yamaha</option>
+        <option value="Kawasaki">Kawasaki</option>
+        <option value="Suzuki">Suzuki</option>
+        <option value="Aprilia">Aprilia</option>
+        <option value="BMW">BMW</option>
+        <option value="Triumph">Triumph</option>
+        <option value="Ducati">Ducati</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="yearFilter">Production Era:</label>
+      <select id="yearFilter">
+        <option value="">All Years</option>
+        <option value="2000-2009">2000-2009</option>
+        <option value="2010-2019">2010-2019</option>
+        <option value="2020-2024">2020-2024</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="engineFilter">Engine Type:</label>
+      <select id="engineFilter">
+        <option value="">All Types</option>
+        <option value="Inline-Four">Inline-Four</option>
+        <option value="Inline-Triple">Inline-Triple</option>
+        <option value="V-Twin">V-Twin</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat-box">
+      <div class="stat-value" id="totalModels">0</div>
+      <div class="stat-label">Models</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value" id="manufacturers">0</div>
+      <div class="stat-label">Manufacturers</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value" id="avgPower">0</div>
+      <div class="stat-label">Avg HP</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value" id="lightestWeight">0</div>
+      <div class="stat-label">Lightest (kg)</div>
+    </div>
+  </div>
+
+  <table id="bikeTable">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">Model</th>
+        <th onclick="sortTable(1)">Manufacturer</th>
+        <th onclick="sortTable(2)">Years</th>
+        <th onclick="sortTable(3)">Displacement</th>
+        <th onclick="sortTable(4)">Power (HP)</th>
+        <th onclick="sortTable(5)">Weight (kg)</th>
+        <th onclick="sortTable(6)">Engine Type</th>
+        <th onclick="sortTable(7)">Top Speed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data rows will be inserted here by JS -->
+    </tbody>
+  </table>
+
+  <footer>
+    <p>Data is representative and may vary by market and model year. <span class="logo">600ccCompare</span> | Source: Manufacturer catalogs, press releases, and industry databases.</p>
+  </footer>
+
+  <script>
+    // Complete dataset of 600cc sport bikes since 2000
+    const bikeData = [
+      // Honda
+      { model: "CBR600RR", manufacturer: "Honda", years: "2003–2023", displacement: 599, power: 105, weight: 192, engine: "Inline-Four", topSpeed: 270, status: "retired" },
+      { model: "CBR600F", manufacturer: "Honda", years: "2011–2013", displacement: 599, power: 97, weight: 207, engine: "Inline-Four", topSpeed: 240, status: "retired" },
+      
+      // Yamaha
+      { model: "YZF-R6", manufacturer: "Yamaha", years: "2000–2023", displacement: 599, power: 117, weight: 188, engine: "Inline-Four", topSpeed: 270, status: "retired" },
+      { model: "YZF600R", manufacturer: "Yamaha", years: "2000–2007", displacement: 600, power: 98, weight: 192, engine: "Inline-Four", topSpeed: 245, status: "retired" },
+      
+      // Kawasaki
+      { model: "Ninja ZX-6R", manufacturer: "Kawasaki", years: "2000–Present", displacement: 636, power: 127, weight: 192, engine: "Inline-Four", topSpeed: 280, status: "current" },
+      { model: "Ninja 600", manufacturer: "Kawasaki", years: "2000–2002", displacement: 599, power: 98, weight: 196, engine: "Inline-Four", topSpeed: 240, status: "retired" },
+      
+      // Suzuki
+      { model: "GSX-R600", manufacturer: "Suzuki", years: "2000–Present", displacement: 599, power: 118, weight: 181, engine: "Inline-Four", topSpeed: 270, status: "current" },
+      { model: "GSX600F", manufacturer: "Suzuki", years: "2000–2002", displacement: 599, power: 95, weight: 218, engine: "Inline-Four", topSpeed: 230, status: "retired" },
+      
+      // Aprilia
+      { model: "RS 660", manufacturer: "Aprilia", years: "2020–Present", displacement: 659, power: 100, weight: 183, engine: "Inline-Triple", topSpeed: 240, status: "current" },
+      { model: "RSV 660", manufacturer: "Aprilia", years: "2020–Present", displacement: 659, power: 100, weight: 183, engine: "Inline-Triple", topSpeed: 240, status: "current" },
+      { model: "RS 512", manufacturer: "Aprilia", years: "2000–2003", displacement: 512, power: 108, weight: 168, engine: "V-Twin", topSpeed: 260, status: "retired" },
+      
+      // BMW
+      { model: "F800R", manufacturer: "BMW", years: "2009–2020", displacement: 798, power: 85, weight: 206, engine: "Inline-Twin", topSpeed: 225, status: "retired" },
+      { model: "F800S", manufacturer: "BMW", years: "2006–2010", displacement: 798, power: 85, weight: 209, engine: "Inline-Twin", topSpeed: 220, status: "retired" },
+      { model: "HP2 Sport", manufacturer: "BMW", years: "2008–2012", displacement: 1170, power: 128, weight: 175, engine: "Boxer-Twin", topSpeed: 250, status: "retired" },
+      
+      // Triumph
+      { model: "Daytona 675", manufacturer: "Triumph", years: "2006–2018", displacement: 675, power: 128, weight: 185, engine: "Inline-Triple", topSpeed: 260, status: "retired" },
+      { model: "Daytona 675R", manufacturer: "Triumph", years: "2011–2018", displacement: 675, power: 132, weight: 183, engine: "Inline-Triple", topSpeed: 265, status: "retired" },
+      { model: "Street Triple 675", manufacturer: "Triumph", years: "2007–2017", displacement: 675, power: 106, weight: 186, engine: "Inline-Triple", topSpeed: 230, status: "retired" },
+      
+      // Ducati
+      { model: "Panigale V2", manufacturer: "Ducati", years: "2019–Present", displacement: 955, power: 155, weight: 172, engine: "V-Twin", topSpeed: 280, status: "current" },
+      { model: "848", manufacturer: "Ducati", years: "2008–2013", displacement: 849, power: 133, weight: 174, engine: "V-Twin", topSpeed: 265, status: "retired" },
+      { model: "749", manufacturer: "Ducati", years: "2003–2007", displacement: 749, power: 122, weight: 174, engine: "V-Twin", topSpeed: 260, status: "retired" },
+      { model: "620 Sport", manufacturer: "Ducati", years: "2000–2003", displacement: 620, power: 80, weight: 180, engine: "V-Twin", topSpeed: 220, status: "retired" },
+      
+      // Additional models
+      { model: "KTM RC 390", manufacturer: "KTM", years: "2014–Present", displacement: 373, power: 43, weight: 166, engine: "Single-Cylinder", topSpeed: 160, status: "current" },
+      { model: "KTM RC 8C", manufacturer: "KTM", years: "2021–Present", displacement: 888, power: 138, weight: 174, engine: "V-Twin", topSpeed: 260, status: "current" },
+      { model: "MV Agusta F3 675", manufacturer: "MV Agusta", years: "2012–Present", displacement: 675, power: 126, weight: 173, engine: "Inline-Triple", topSpeed: 255, status: "current" },
+      { model: "MV Agusta F3 800", manufacturer: "MV Agusta", years: "2013–2021", displacement: 798, power: 148, weight: 175, engine: "Inline-Triple", topSpeed: 270, status: "retired" },
+      { model: "Benelli Tornado 650", manufacturer: "Benelli", years: "2002–2008", displacement: 653, power: 80, weight: 198, engine: "Parallel-Twin", topSpeed: 220, status: "retired" },
+      { model: "Bimota YB4", manufacturer: "Bimota", years: "2000–2004", displacement: 599, power: 110, weight: 168, engine: "Inline-Four", topSpeed: 265, status: "retired" },
+      { model: "Ninja ZX-6RR", manufacturer: "Kawasaki", years: "2004–2006", displacement: 636, power: 132, weight: 192, engine: "Inline-Four", topSpeed: 285, status: "retired" }
+    ];
+
+    // Sort variables
+    let sortColumn = -1;
+    let sortDirection = 1;
+
+    // Function to render the table
+    function renderTable(data) {
+      const tbody = document.querySelector("#bikeTable tbody");
+      tbody.innerHTML = '';
+      
+      data.forEach(bike => {
+        const row = document.createElement('tr');
+        
+        // Add model with status class
+        const modelCell = document.createElement('td');
+        modelCell.className = `model-name ${bike.status}`;
+        modelCell.textContent = bike.model;
+        row.appendChild(modelCell);
+        
+        // Manufacturer
+        const manuCell = document.createElement('td');
+        manuCell.className = 'manufacturer';
+        manuCell.textContent = bike.manufacturer;
+        row.appendChild(manuCell);
+        
+        // Years
+        const yearsCell = document.createElement('td');
+        yearsCell.className = bike.status;
+        yearsCell.textContent = bike.years;
+        row.appendChild(yearsCell);
+        
+        // Displacement
+        const dispCell = document.createElement('td');
+        dispCell.textContent = `${bike.displacement} cc`;
+        row.appendChild(dispCell);
+        
+        // Power
+        const powerCell = document.createElement('td');
+        powerCell.textContent = bike.power;
+        if (bike.power > 120) powerCell.className = 'power-strong';
+        row.appendChild(powerCell);
+        
+        // Weight
+        const weightCell = document.createElement('td');
+        weightCell.textContent = bike.weight;
+        if (bike.weight < 180) weightCell.className = 'weight-light';
+        row.appendChild(weightCell);
+        
+        // Engine type with color coding
+        const engineCell = document.createElement('td');
+        engineCell.textContent = bike.engine;
+        if (bike.engine.includes('Triple')) engineCell.className = 'engine-inline';
+        else if (bike.engine.includes('V-')) engineCell.className = 'engine-v';
+        else if (bike.engine.includes('Radial')) engineCell.className = 'engine-radial';
+        row.appendChild(engineCell);
+        
+        // Top speed
+        const speedCell = document.createElement('td');
+        speedCell.textContent = `${bike.topSpeed} km/h`;
+        row.appendChild(speedCell);
+        
+        tbody.appendChild(row);
+      });
+      
+      updateStats(data);
+    }
+
+    // Sort table function
+    function sortTable(column) {
+      if (sortColumn === column) {
+        sortDirection *= -1;
+      } else {
+        sortColumn = column;
+        sortDirection = 1;
+      }
+      
+      // Get current filtered data
+      const filteredData = getFilteredData();
+      
+      // Sort based on column
+      filteredData.sort((a, b) => {
+        let valueA, valueB;
+        
+        switch(column) {
+          case 0: valueA = a.model; valueB = b.model; break;
+          case 1: valueA = a.manufacturer; valueB = b.manufacturer; break;
+          case 2: valueA = a.years; valueB = b.years; break;
+          case 3: valueA = a.displacement; valueB = b.displacement; break;
+          case 4: valueA = a.power; valueB = b.power; break;
+          case 5: valueA = a.weight; valueB = b.weight; break;
+          case 6: valueA = a.engine; valueB = b.engine; break;
+          case 7: valueA = a.topSpeed; valueB = b.topSpeed; break;
+          default: return 0;
+        }
+        
+        if (valueA < valueB) return -1 * sortDirection;
+        if (valueA > valueB) return 1 * sortDirection;
+        return 0;
+      });
+      
+      renderTable(filteredData);
+    }
+
+    // Get filtered data based on selections
+    function getFilteredData() {
+      const manufacturer = document.getElementById('manufacturerFilter').value;
+      const yearRange = document.getElementById('yearFilter').value;
+      const engineType = document.getElementById('engineFilter').value;
+      const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+      
+      return bikeData.filter(bike => {
+        // Manufacturer filter
+        if (manufacturer && bike.manufacturer !== manufacturer) return false;
+        
+        // Year range filter
+        if (yearRange) {
+          const yearSplit = yearRange.split('-');
+          const start = parseInt(yearSplit[0]);
+          const end = parseInt(yearSplit[1]);
+          const bikeYear = parseInt(bike.years);
+          if (bikeYear < start || bikeYear > end) return false;
+        }
+        
+        // Engine type filter
+        if (engineType && !bike.engine.includes(engineType)) return false;
+        
+        // Search query filter
+        if (searchQuery) {
+          const searchable = `${bike.model} ${bike.manufacturer} ${bike.engine} ${bike.years}`.toLowerCase();
+          if (!searchable.includes(searchQuery)) return false;
+        }
+        
+        return true;
+      });
+    }
+
+    // Update stats
+    function updateStats(data) {
+      document.getElementById('totalModels').textContent = data.length;
+      
+      const uniqueManufacturers = [...new Set(data.map(b => b.manufacturer))];
+      document.getElementById('manufacturers').textContent = uniqueManufacturers.length;
+      
+      const avgPower = Math.round(data.reduce((sum, bike) => sum + bike.power, 0) / data.length);
+      document.getElementById('avgPower').textContent = avgPower;
+      
+      const lightest = Math.min(...data.map(b => b.weight));
+      document.getElementById('lightestWeight').textContent = lightest;
+    }
+
+    // Event listeners for filters
+    document.getElementById('manufacturerFilter').addEventListener('change', () => {
+      renderTable(getFilteredData());
+    });
+    
+    document.getElementById('yearFilter').addEventListener('change', () => {
+      renderTable(getFilteredData());
+    });
+    
+    document.getElementById('engineFilter').addEventListener('change', () => {
+      renderTable(getFilteredData());
+    });
+    
+    document.getElementById('searchInput').addEventListener('input', () => {
+      renderTable(getFilteredData());
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      renderTable(bikeData);
+    });
+  </script>
+</body>
+</html>
